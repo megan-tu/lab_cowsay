@@ -32,7 +32,7 @@ def cowsay(text, width=40):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("text", help = "The text for the cow to say")
+    parser.add_argument("text", help="The text for the cow to say")
     args = parser.parse_args()
     print(cowsay(args.text))
 
