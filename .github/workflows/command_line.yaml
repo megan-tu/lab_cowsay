@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: ${{matrix.python}}
       - name: Install cowsay package
-        run:  pip intall .
+        run:  pip install .
           # everything that we put in here is a terminal command
           # the behavior on github actions will be basically the same
           # as the behavior in the terminal on your own computer
