@@ -15,10 +15,12 @@ jobs:
         with:
           python-version: ${{matrix.python}}
       - name: Install cowsay
-        run: sudo apt-get update && sudo apt-get install -y cowsay
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
           python -m pip install --upgrade pip
           python -m pip install flake8
-          python -m pip install cowsay
-          if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
       - name: Run tests
         run: python -m flake8 cowsay --ignore=E501
